@@ -1,0 +1,54 @@
+@CHARSET "ISO-8859-1";
+
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	background-image:url(asset/cool-background_fox.png);
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+background-size: cover;
+font-style: url('caviar_dreams');
+}
+
+.asset {
+	width: 130px;
+	float: right;
+	margin-right : 30px;
+	margin-top : 20px;
+}
+
+.header {
+	display: flex;
+	justify-content : space-between;
+}
+
+h1 {
+	margin-top: 30px;
+	font-size: 5em;
+}
+
+.bouton {
+	cursor: pointer;
+	width : 400px;
+	height: 190px;
+	border-radius: 300px;
+	background-color : #a9e3a6;
+	border: none;
+	float: right;
+	margin-right : 450px;
+	margin-top: 300px;
+	box-shadow: 0px 0px 20px 24px rgba(85, 84, 84, 0.75);
+-moz-box-shadow: 0px 0px 10px 4px rgba(85, 84, 84, 0.75);
+-webkit-box-shadow: 0px 0px 10px 4px rgba(85, 84, 84, 0.75);
+}
+
+.bouton:hover {
+	transform: scale(1.1);
+	background-color: #6fce71;
+}
+
+p {
+	font-size : 2.7em;
+}
