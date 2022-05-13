@@ -3,11 +3,11 @@
 	margin: 0;
 }
 body {
-	background-image:url(assets/cool-background_fox.png);
+	background-image:url('/assets/cool-background_fox.png');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-	font-style: url('caviar_dreams');
+	font-style: url('/assets/caviar_dreams/Caviar_Dreams.ttf');
 }
 
 .asset {
