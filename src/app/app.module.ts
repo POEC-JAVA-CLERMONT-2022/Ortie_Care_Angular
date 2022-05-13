@@ -8,13 +8,19 @@ import { AppComponent } from './app.component';
 import { AppPageAccueilComponent } from './app-page-accueil/app-page-accueil.component';
 import { AppGenerateurComponent } from './app-generateur/app-generateur.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { ConseilListComponent } from './conseil-list/conseil-list.component';
+import { LegumesListComponent } from './legumes-list/legumes-list.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppPageAccueilComponent,
     AppGenerateurComponent,
-    NavigationComponent
+    NavigationComponent,
+    ConseilListComponent,
+    LegumesListComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

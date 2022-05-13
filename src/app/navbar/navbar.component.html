@@ -1,0 +1,22 @@
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <div class="row ms-2">
+          <div class="col-8">
+            <input class="form-control" name="path" [(ngModel)]="path">
+          </div>
+          <div class="col-4">
+            <button [routerLink]="path" class="btn btn-primary">Go to</button>
+          </div>
+        </div>
+        <button class="btn btn-danger" (click)="addCounter()">Add Die Counter</button>
+        <p>{{dieCounter}}</p>
+        <a class="navbar-brand" routerLink="">Accueil</a>
+        <a class="navbar-brand" routerLink="conseils">Liste des conseils</a>
+        <a class="navbar-brand" routerLink="legumes">Liste des legumes</a>
+        <a class="navbar-brand" routerLink="generateur">Générateur d'idées</a>
+      </div>
+    </nav>
+  </header>
+  
