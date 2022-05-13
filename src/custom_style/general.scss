@@ -1,0 +1,32 @@
+
+
+body {
+    background-color: $default-background;
+  }
+  
+  .bg-light {
+    background-color: $d-bg-d15 !important;
+  }
+  
+  .badcolor {
+    background-color: deeppink !important;
+  }
+  
+  .img-fluid {
+    height: 100%;
+  }
+  
+  .router-link {
+    cursor: pointer;
+    &:hover {
+      background-color: darkolivegreen;
+      td {
+        color: antiquewhite !important;
+      }
+    }
+  }
+  
+  .real-white {
+    background-color: white;
+  }
+  
