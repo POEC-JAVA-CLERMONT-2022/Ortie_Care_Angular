@@ -1,15 +1,13 @@
-@CHARSET "ISO-8859-1";
-
 * {
 	padding: 0;
 	margin: 0;
 }
 body {
-	background-image:url(asset/cool-background_fox.png);
- background-repeat: no-repeat;
- background-attachment: fixed;
-background-size: cover;
-font-style: url('caviar_dreams');
+	background-image:url(assets/cool-background_fox.png);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	font-style: url('caviar_dreams');
 }
 
 .asset {
@@ -40,8 +38,8 @@ h1 {
 	margin-right : 450px;
 	margin-top: 300px;
 	box-shadow: 0px 0px 20px 24px rgba(85, 84, 84, 0.75);
--moz-box-shadow: 0px 0px 10px 4px rgba(85, 84, 84, 0.75);
--webkit-box-shadow: 0px 0px 10px 4px rgba(85, 84, 84, 0.75);
+	-moz-box-shadow: 0px 0px 10px 4px rgba(85, 84, 84, 0.75);
+	-webkit-box-shadow: 0px 0px 10px 4px rgba(85, 84, 84, 0.75);
 }
 
 .bouton:hover {

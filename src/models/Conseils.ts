@@ -1,11 +1,11 @@
 
 export class Conseils {
 
-    constructor(
-      private _idConseil: string,
-      private _titre: string,
-      private _description: string
-    ) { }
+    private _idConseil: string = '';
+    private _titre: string = '';
+    private _description: string = '';
+
+    constructor() { }
   
     get idConseil(): string {
       return this._idConseil;
