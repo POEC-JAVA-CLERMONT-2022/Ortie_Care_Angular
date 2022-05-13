@@ -1,0 +1,136 @@
+.asset {
+	width: 130px;
+	float: right;
+	margin-right : 20px;
+}
+
+/*                                                FIN  ICONE                          */
+
+/*                                                  GENERATEUR                     */
+.generateur {
+	background-color: #F9F9F9;
+	margin-top: 50px;
+	width: 850px;
+	height: 530px;
+	border-radius: 15px;
+	margin-left: 250px;
+	box-shadow: #333 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+p {
+	text-align: center;
+}
+
+/*                                            MENUS DEROULANT         */
+.bloc {
+	display: grid;
+	grid-template-columns: 200px 150px;
+	margin-top: 200px;
+
+
+}
+
+.grosbloc {
+	display: flex;
+	margin: auto;
+	justify-content : center;
+	margin-top:180px;
+}
+
+select {
+	appearance: none;
+	outline: 0;
+	border: 0 !important;
+	background: #F9F9F9;
+	background-image: none;
+	box-shadow: none;
+	font-size: 1.2em;
+}
+
+/* Mise en forme de la div .select*/
+.select {
+	position: relative;
+	width: 170px;
+	height: 45px;
+	overflow: hidden;
+	border-radius: 5px;
+	border: 1px solid #CED4DA;
+	margin-right: 20px;
+}
+
+/* Mise en forme de la balise select*/
+select {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding-left: 15px;
+	color: #333;
+	cursor: pointer;
+}
+
+/* Mise en place de la flèche */
+.select::after {
+	content: '\276F';
+	position: absolute;
+	top: 20%;
+	right: 0;
+	padding: 0 15px;
+	background: white;
+	pointer-events: none;
+	transform: rotate(90deg);
+	font-size: 1.3em;
+	background: #F9F9F9;
+}
+
+.select:hover::after {
+	color: green;
+}
+
+.bouton {
+	width: 150px;
+	height: 60px;
+	background-color: #F9F9F9;
+	font-size: 1.2em;
+	cursor: pointer;
+	border-radius: 30px;
+	border: 1px solid #CED4DA;
+	margin-left: 110px
+
+}
+
+.bouton:hover {
+	transform: scale(1.1);
+	background-color: #aad5b1;
+	color:  #F9F9F9;
+}
+
+@media(max-width: 1600px) {
+	.grosbloc {
+	display: flex;
+	flex-direction: column;
+	}
+
+	.bloc {
+	margin: auto;
+	margin-top: -30px;
+	}
+
+	.generateur {
+	margin: auto;
+	margin-top: 80px;
+	width: 680px;
+	height: 500px;
+	}
+
+	.bouton {
+	margin-top: 50px;
+	}
+
+}
+
+@media(max-width: 900px) {
+	.generateur {
+	width: 550px;
+	height: 500px;
+	}
+}
