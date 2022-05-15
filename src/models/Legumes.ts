@@ -1,4 +1,4 @@
-import { Conseils } from "./Conseils";
+import { Conseils } from "./ConseilDeCulture";
 import { Sols } from "./Sols";
 
 export class Legumes {

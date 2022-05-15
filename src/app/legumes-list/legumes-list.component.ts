@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Legumes } from 'src/models/Legumes';
+import {ActivatedRoute, Router} from "@angular/router";
+import { LegumeServiceService } from 'src/services/legume.service';
 
 @Component({
   selector: 'app-legumes-list',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./legumes-list.component.scss']
 })
 export class LegumesListComponent implements OnInit {
+  legumes: Array<Legumes> = [];
 
-  constructor() { }
+  constructor(
+    private httpLegume: LegumeServiceService,
+    public router: Router
+  ) { }
 
   ngOnInit(): void {
+    this.httpLegume.getLegumes().subscribe((jsonLegumes) => {
+      this.legumes = jsonLegumes;
+    });
   }
-
 }
