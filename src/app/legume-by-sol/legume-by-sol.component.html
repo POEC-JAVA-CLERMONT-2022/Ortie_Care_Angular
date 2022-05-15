@@ -1,0 +1,13 @@
+
+<div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 text-center my-5"
+           *ngFor="let digimon of digimons"
+      >
+        <h2>{{digimon.name}}</h2>
+        <img [src]="digimon.img" class="img-fluid">
+        <p class="router-link" routerLink="/digidex/{{digimon.level}}">{{digimon.level}}</p>
+      </div>
+    </div>
+  </div>
+  

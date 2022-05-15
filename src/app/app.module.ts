@@ -11,7 +11,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ConseilListComponent } from './conseil-list/conseil-list.component';
 import { LegumesListComponent } from './legumes-list/legumes-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
-
+/* import { LegumeBySolComponent } from './legume-by-sol/legume-by-sol.component';
+*/
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     NavigationComponent,
     ConseilListComponent,
     LegumesListComponent,
-    NavbarComponent
+    NavbarComponent,
+    /*LegumeBySolComponent */
   ],
   imports: [
     BrowserModule,

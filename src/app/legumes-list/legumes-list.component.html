@@ -1,1 +1,64 @@
-<p>legumes-list works!</p>
+
+<div class="container">
+
+    <!-- paginator est un component fille de account-index (mère) -->
+    <!-- eventEmitterUrlClicked => Output depuis la fille -->
+    <!-- on doit passer l'information à une fonction de la classe mère -->
+    <!-- qui prend un paramètre du même type déclaré dans l'EventEmitter de la fille -->
+    <!-- ici : string ($event sera donc de type string) 
+    <app-paginator  [hydraView]="apiResults['hydra:view']"
+                    (eventEmitterUrlClicked)="updateResult($event)"
+    ></app-paginator>
+  -->
+
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>
+            Nom
+          </th>
+          <th>
+            Se reseme auto
+          </th>
+          <th>
+            Est une gousse
+          </th>
+          <th>
+            Temps avant première recole (en mois)
+          </th>
+          <th>
+            Poids moyen
+          </th>
+          <th>
+            NbConseils
+          </th>
+          <th>
+            NbLegumes
+          </th>
+          <th>
+            Sol préféré
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container
+          *ngFor="let legume of legumes"
+        >
+          <tr
+            class="router-link"
+          >
+            <td>{{legume.nom}}</td>
+            <td>{{legume.autoReseme}}</td>
+            <td>{{legume.isGousse}}</td>
+            <td>{{legume.tempsAvantRecolteEnMois}}</td>
+            <td>{{legume.poidsMoyenFruitEnG}} grammes</td>
+            <td>{{legume.conseilsDeCulture.length}}</td>
+            <td>{{legume.legumesAssocies.length}}</td>
+            <td>{{legume.bestSol.nomSol}}</td>
+            
+          </tr>
+            </ng-container>
+      </tbody>
+    </table>
+  </div>
+  
