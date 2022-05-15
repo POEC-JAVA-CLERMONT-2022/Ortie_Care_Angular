@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+
   dieCounter: number = 0;
   path: string = '';
 
