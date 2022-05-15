@@ -25,7 +25,7 @@ export class UrlApiConstantes {
   static urlApi: string = 'http://localhost:8080/api';
   static urlLegumes: string = '/legumes/';
   static urlLegumesGetAll: string = '/legumes/getAll';
-  static urlConseils: string = '';
+  static urlLegumesBySol: string = '/legumes/sol/';
   static urlSols: string = '';
   static urlUsers: string = '';
 
