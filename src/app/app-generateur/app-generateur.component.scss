@@ -125,6 +125,11 @@ select {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 25px;
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+}
 @media(max-width: 1600px) {
 	.grosbloc {
 	display: flex;
