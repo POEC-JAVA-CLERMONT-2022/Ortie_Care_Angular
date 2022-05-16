@@ -10,6 +10,9 @@ body {
 	font-style: url('/assets/caviar_dreams/Caviar_Dreams.ttf');
   height: 881px;
 }
+h1 {
+   margin-left: 750px;
+}
 
 .asset {
 	width: 130px;
@@ -30,7 +33,7 @@ h1 {
 
 .bouton {
 	cursor: pointer;
-	width : 400px;
+	width : 450px;
 	height: 190px;
 	border-radius: 300px;
 	background-color : #a9e3a6;
@@ -46,6 +49,7 @@ h1 {
 .bouton:hover {
 	transform: scale(1.1);
 	background-color: #6fce71;
+  color: rgb(243, 238, 232);
 }
 
 p {

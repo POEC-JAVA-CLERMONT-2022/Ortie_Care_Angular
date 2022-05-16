@@ -1,3 +1,5 @@
+
+
 body {
   background-image: url('/assets/cool-background.png');
   background-repeat: no-repeat;
@@ -62,6 +64,7 @@ select {
 	border-radius: 5px;
 	border: 1px solid rgb(255, 251, 246);
 	margin-right: 20px;
+  margin-bottom: 25px;
 }
 
 /* Mise en forme de la balise select*/
@@ -129,6 +132,10 @@ select {
 .center {
   display: flex;
   justify-content: center;
+}
+
+h3 {
+  margin-bottom: 30px;
 }
 @media(max-width: 1600px) {
 	.grosbloc {
