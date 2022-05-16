@@ -26,8 +26,8 @@
             [class.is-invalid]="(selectedLegume.touched || selectedLegume.dirty) && selectedLegume.invalid" type="text">
             <option *ngFor="let legume of legumes" value="legume.idLegume">{{legume.nom}}</option>
           </select>
-          <button class="bouton">Générer</button>
         </div>
+        <button class="bouton">Générer</button>
       </div>
       <div class="generateur" *ngIf="legumesAssocies">
         <div class="card">
