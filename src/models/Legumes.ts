@@ -3,18 +3,17 @@ import { Sols } from "./Sols";
 
 export class Legumes {
 
-    constructor(
-      private _idLegume: string,
-      private _nom: string,
-      private _autoReseme: boolean,
-      private _isGousse: boolean,
-      private _tempsAvantRecolteEnMois: string,
-      private _poidsMoyenFruitEnG: string,
-      private _conseilsDeCulture: Array<Conseils>,
-      private _legumesAssocies: Array<Legumes>,
-      private _bestSol: Sols
+  private _idLegume: string = '';
+  private _nom: string = '';
+  private _autoReseme: boolean = false;
+  private _isGousse: boolean = false;
+  private _tempsAvantRecolteEnMois: string = '';
+  private _poidsMoyenFruitEnG: string = '';
+  private _conseilsDeCulture: Array<Conseils> = new Array<Conseils>();
+  private _legumesAssocies: Array<Legumes> = new Array<Legumes>();
+  private _bestSol: Sols = new Sols();
 
-    ) { }
+    constructor() { }
   
     get idLegume(): string {
       return this. _idLegume;

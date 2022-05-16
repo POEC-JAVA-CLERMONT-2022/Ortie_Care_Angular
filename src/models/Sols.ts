@@ -1,14 +1,14 @@
 
 export class Sols {
 
-    constructor(
-      private _idSol: string,
-      private _nomSol: string,
-      private _textureSol: string,
-      private _structureSol: string,
-      private _avantageSol: string,
-      private _inconvenientSol: string
-    ) { }
+  private _idSol: string = '';
+  private _nomSol: string = '';
+  private _textureSol: string = '';
+  private _structureSol: string = '';
+  private _avantageSol: string = '';
+  private _inconvenientSol: string = '';
+  
+  constructor() { }
   
     get idSol(): string {
       return this._idSol;

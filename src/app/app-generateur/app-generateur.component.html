@@ -6,7 +6,6 @@
 </head>
 
 <body>
-  <div>
     <div class="icone">
       <img src="assets/sun.png" class="asset">
     </div>
@@ -15,26 +14,22 @@
       <div class="bloc">
 
         <div class="select">
-          <select>
-            <option>Mon sol</option>
-            <option value="1">Argileux</option>
-            <option value="1">Sableux</option>
-            <option value="1">Humifère</option>
-            <option value="1">Limoneux</option>
+          <select class="form-control" formControlName="selectedSol" placeholder="Sol"
+            [class.is-valid]="selectedSol.valid"
+            [class.is-invalid]="(selectedSol.touched || selectedSol.dirty) && selectedSol.invalid" type="text">
+            <option *ngFor="let sol of sols" value="sol.idSol">{{sol.nomSol}}</option>
           </select>
         </div>
         <div class="select">
-          <select>
-            <option>Mon légume</option>
-            <option value="1">Tomate</option>
-            <option value="1">Salade</option>
-            <option value="1">Haricot</option>
-            <option value="1">Courge</option>
+          <select class="form-control" formControlName="selectedLegume" placeholder="Legume"
+            [class.is-valid]="selectedLegume.valid"
+            [class.is-invalid]="(selectedLegume.touched || selectedLegume.dirty) && selectedLegume.invalid" type="text">
+            <option *ngFor="let legume of legumes" value="legume.idLegume">{{legume.nom}}</option>
           </select>
+          <button class="bouton">Générer</button>
         </div>
-        <button class="bouton">Générer</button>
       </div>
-      <div class="generateur">
+      <div class="generateur" *ngIf="legumesAssocies">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Mon légume</h5>
@@ -45,45 +40,60 @@
             <p class="card-text"> Conseil de culture : </p>
             <div class="cardConseil">
               <div class="card-body">
-                <p class="card-text">Sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssome quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">
+                  Sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssome
+                  quick example text to build on the card title and make up the bulk of the card's content.</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Légume associé 1</h5>
-            <p class="card-text"> Nom : </p>
-            <p class="card-text"> Auto-semis : </p>
-            <p class="card-text"> Temps avant récolte (mois) : </p>
-            <p class="card-text"> Poids moyen (g) : </p>
-            <p class="card-text"> Conseil de culture : </p>
-            <div class="cardConseil">
-              <div class="card-body">
-                <p class="card-text">Sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssome quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Légume associé 2</h5>
-            <p class="card-text"> Nom : </p>
-            <p class="card-text"> Auto-semis : </p>
-            <p class="card-text"> Temps avant récolte (mois) : </p>
-            <p class="card-text"> Poids moyen (g) : </p>
-            <p class="card-text"> Conseil de culture : </p>
-            <div class="cardConseil">
-              <div class="card-body">
-                <p class="card-text">Sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssome quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <table *ngIf="legumesAssocies" class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>
+              Nom
+            </th>
+            <th>
+              Se reseme auto
+            </th>
+            <th>
+              Est une gousse
+            </th>
+            <th>
+              Temps avant première recole (en mois)
+            </th>
+            <th>
+              Poids moyen
+            </th>
+            <th>
+              NbConseils
+            </th>
+            <th>
+              NbLegumes
+            </th>
+            <th>
+              Sol préféré
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let legume of legumes">
+            <tr class="router-link">
+              <td>{{legume.nom}}</td>
+              <td>{{legume.autoReseme}}</td>
+              <td>{{legume.isGousse}}</td>
+              <td>{{legume.tempsAvantRecolteEnMois}}</td>
+              <td>{{legume.poidsMoyenFruitEnG}} grammes</td>
+              <td>{{legume.conseilsDeCulture.length}}</td>
+              <td>{{legume.legumesAssocies.length}}</td>
+              <td>{{legume.bestSol.nomSol}}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
     </div>
-  </div>
 </body>
 
 </html>
