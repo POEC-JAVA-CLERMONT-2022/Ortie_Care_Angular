@@ -26,7 +26,7 @@ export class UrlApiConstantes {
   static urlLegumes: string = '/legumes/';
   static urlLegumesGetAll: string = '/legumes/getAll';
   static urlLegumesBySol: string = '/legumes/sol/';
-  static urlSols: string = '';
+  static urlSols: string = '/sols/getAll';
   static urlUsers: string = '';
 
 
