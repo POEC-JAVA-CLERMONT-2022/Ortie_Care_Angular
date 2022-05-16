@@ -12,7 +12,7 @@
 
   <div class="grosbloc">
     <div class="bloc" [formGroup]="formGroup">
-      <span class="label label-success">Mon type de sol : </span>
+      <span class="label label-success"><strong>Mon type de sol :</strong> </span>
       <div class="select" *ngIf="sols">
         <select class="form-control" (change)="onRefreshSol()" formControlName="selectedSol" placeholder="selectedSol"
           [class.is-valid]="selectedSol.valid"
@@ -20,7 +20,7 @@
           <option *ngFor="let sol of sols" [ngValue]="sol.idSol"> {{sol.nomSol}} </option>
         </select>
       </div>
-      <span class="label label-success">Mon legume : </span>
+      <span class="label label-success"><strong>Mon légume : </strong></span>
       <div class="select" *ngIf="legumesBySol">
         <select class="form-control" formControlName="selectedLegume" placeholder="selectedLegume"
           [class.is-valid]="selectedLegume.valid"
@@ -34,7 +34,7 @@
       <div *ngFor="let pickedLegume of legumesAssocies">
         <div class="card">
           <div class="card-body" *ngFor="let pickedLegume of legumesAssocies">
-            <h5 class="card-title" class="center">{{pickedLegume.nom}}</h5>
+            <h3 class="card-title" class="center">{{pickedLegume.nom}}</h3>
             <p class="card-text" *ngIf="pickedLegume.autoReseme"> S'auto ressème </p>
             <p class="card-text" *ngIf="!pickedLegume.autoReseme"> Ne s'auto ressème pas </p>
             <p class="card-text" *ngIf="pickedLegume.isGousse"> Est une gousse </p>
@@ -54,7 +54,7 @@
         </div>
         <div class="card" *ngFor="let associatedLegume of pickedLegume.legumesAssocies">
           <div class="card-body">
-            <h5 class="card-title"> {{associatedLegume.nom}} </h5>
+            <h3 class="card-title"> {{associatedLegume.nom}} </h3>
             <p class="card-text"> {{associatedLegume.autoReseme}} </p>
             <p class="card-text"> {{associatedLegume.isGousse}} </p>
             <p class="card-text"> {{associatedLegume.tempsAvantRecolteEnMois}} </p>
