@@ -3,7 +3,7 @@ import { Sols } from "./Sols";
 
 export class Legumes {
 
-  private _idLegume: string = '';
+  private _id: string = '';
   private _nom: string = '';
   private _autoReseme: boolean = false;
   private _isGousse: boolean = false;
@@ -15,8 +15,8 @@ export class Legumes {
 
     constructor() { }
   
-    get idLegume(): string {
-      return this. _idLegume;
+    get id(): string {
+      return this. _id;
     }
 
     get nom(): string {

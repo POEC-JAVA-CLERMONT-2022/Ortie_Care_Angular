@@ -8,6 +8,7 @@ import { Sols } from 'src/models/Sols';
 @Injectable({
   providedIn: 'root'
 })
+
 export class LegumeServiceService {
 
   constructor(private httpClient: HttpClient) { }
@@ -17,14 +18,15 @@ export class LegumeServiceService {
     return this.httpClient.get<Array<Legumes>>(UrlApiConstantes.urlApi+UrlApiConstantes.urlLegumesGetAll);
   }
 
-  getLegumesBySol(sol: string): Observable<Array<Legumes>> {
-    console.log(UrlApiConstantes.urlApi+UrlApiConstantes.urlLegumesBySol + sol);
-    return this.httpClient.get<Array<Legumes>>(UrlApiConstantes.urlApi+UrlApiConstantes.urlLegumesBySol + sol);
+  getLegumesBySol(idSol: string): Observable<Array<Legumes>> {
+    console.log(UrlApiConstantes.urlApi+UrlApiConstantes.urlLegumesBySol + idSol);
+    console.log(this.httpClient.get<Array<Legumes>>(UrlApiConstantes.urlApi+UrlApiConstantes.urlLegumesBySol + idSol));
+    return this.httpClient.get<Array<Legumes>>(UrlApiConstantes.urlApi+UrlApiConstantes.urlLegumesBySol + idSol);
   }
   
-  getLegumesBySolAndId(sol: string, idLegume: string): Observable<Array<Legumes>> {
-    console.log(UrlApiConstantes.urlApi+UrlApiConstantes.urlLegumesBySol + sol + "/" + idLegume);
-    return this.httpClient.get<Array<Legumes>>(UrlApiConstantes.urlApi+UrlApiConstantes.urlLegumesBySol + sol + "/" + idLegume);
+  getLegumesBySolAndId(idSol: string, idLegume: string): Observable<Array<Legumes>> {
+    console.log(UrlApiConstantes.urlApi+UrlApiConstantes.urlLegumesBySol + idSol + "/" + idLegume);
+    return this.httpClient.get<Array<Legumes>>(UrlApiConstantes.urlApi+UrlApiConstantes.urlLegumesBySol + idSol + "/" + idLegume);
   }
 
   // getLegumeBySolId(solId: string): Observable<Array<Legumes>> {

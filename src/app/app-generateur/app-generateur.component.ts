@@ -23,6 +23,7 @@ export class AppGenerateurComponent implements OnInit {
   displayInfos: boolean = false; 
   
   legumes: Array<Legumes> = [];
+  legumesBySol: Array<Legumes>|undefined;
   sols: Array<Sols> = [];
   legumesAssocies: Array<Legumes> | undefined;
   
@@ -68,19 +69,18 @@ export class AppGenerateurComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.formGroup.valid) {
       this.displayInfos = true;
-      this.httpLegume.getLegumesBySolAndId(this.selectedLegume.value, this.selectedSol.value).subscribe((jsonLegumes) => {
-        this.legumesAssocies = jsonLegumes;});
-      
-      this.router.navigate(['/']);
-    }
+      this.httpLegume.getLegumesBySolAndId(this.selectedLegume.value, this.selectedSol.value).subscribe((jsonLegumesRequested) => {
+        console.log(jsonLegumesRequested)
+        this.legumesAssocies = jsonLegumesRequested;});
+
+      // this.router.navigate(['/']);
   }
 
 
   onRefreshSol(): void {
     this.httpLegume.getLegumesBySol(this.selectedSol.value).subscribe((jsonLegumes) => {
-      this.legumes = jsonLegumes;
+      this.legumesBySol = jsonLegumes;
     });
   }
 }
