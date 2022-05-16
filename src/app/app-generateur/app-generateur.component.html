@@ -6,32 +6,32 @@
 </head>
 
 <body>
-    <div class="icone">
-      <img src="assets/sun.png" class="asset">
-    </div>
+  <div class="icone">
+    <img src="assets/sun.png" class="asset">
+  </div>
 
-    <div class="grosbloc">
-      <div class="bloc" [formGroup]="formGroup">
-        <div class="select" *ngIf="sols">
-          <select class="form-control"
-            (change)="onRefreshSol()"
-            formControlName="selectedSol" placeholder="selectedSol"
-            [class.is-valid]="selectedSol.valid"
-            [class.is-invalid]="(selectedSol.touched || selectedSol.dirty) && selectedSol.invalid" type="text">
-            <option *ngFor="let sol of sols" [ngValue]="sol.idSol"> {{sol.nomSol}} </option>
-          </select>
-        </div>
-        <div class="select" *ngIf="legumesBySol">
-          <select class="form-control"
-            formControlName="selectedLegume" placeholder="selectedLegume"
-            [class.is-valid]="selectedLegume.valid"
-            [class.is-invalid]="(selectedLegume.touched || selectedLegume.dirty) && selectedLegume.invalid" type="text">
-            <option *ngFor="let legume of legumesBySol" [ngValue]="legume.id"> {{legume.nom}} </option>
-          </select>
-        </div>
-        <button type="button" (click)="onSubmit()" class="bouton" >Générer</button>
+  <div class="grosbloc">
+    <div class="bloc" [formGroup]="formGroup">
+      <span class="label label-success">Mon type de sol : </span>
+      <div class="select" *ngIf="sols">
+        <select class="form-control" (change)="onRefreshSol()" formControlName="selectedSol" placeholder="selectedSol"
+          [class.is-valid]="selectedSol.valid"
+          [class.is-invalid]="(selectedSol.touched || selectedSol.dirty) && selectedSol.invalid" type="text">
+          <option *ngFor="let sol of sols" [ngValue]="sol.idSol"> {{sol.nomSol}} </option>
+        </select>
       </div>
-      <div class="generateur" *ngIf="legumesAssocies">
+      <span class="label label-success">Mon legume : </span>
+      <div class="select" *ngIf="legumesBySol">
+        <select class="form-control" formControlName="selectedLegume" placeholder="selectedLegume"
+          [class.is-valid]="selectedLegume.valid"
+          [class.is-invalid]="(selectedLegume.touched || selectedLegume.dirty) && selectedLegume.invalid" type="text">
+          <option *ngFor="let legume of legumesBySol" [ngValue]="legume.id"> {{legume.nom}} </option>
+        </select>
+      </div>
+      <button type="button" (click)="onSubmit()" class="bouton" *ngIf="selectedLegume.dirty">Générer</button>
+    </div>
+    <div class="generateur" *ngIf="legumesAssocies">
+      <div *ngFor="let pickedLegume of legumesAssocies">
         <div class="card">
           <div class="card-body" *ngFor="let pickedLegume of legumesAssocies">
             <h5 class="card-title" class="center">{{pickedLegume.nom}}</h5>
@@ -47,13 +47,32 @@
                 <h5>{{conseils.titre}}</h5>
                 <p class="card-text">
                   {{conseils.description}}
-                  </p>
-                </div>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" *ngFor="let associatedLegume of pickedLegume.legumesAssocies">
+          <div class="card-body">
+            <h5 class="card-title"> {{associatedLegume.nom}} </h5>
+            <p class="card-text"> {{associatedLegume.autoReseme}} </p>
+            <p class="card-text"> {{associatedLegume.isGousse}} </p>
+            <p class="card-text"> {{associatedLegume.tempsAvantRecolteEnMois}} </p>
+            <p class="card-text"> {{associatedLegume.poidsMoyenFruitEnG}} </p>
+            <p class="card-text"> Conseils de culture : </p>
+            <div class="cardConseil" *ngFor="let conseils of associatedLegume.conseilsDeCulture">
+              <div class="card-body">
+                <h5>{{conseils.titre}}</h5>
+                <p class="card-text">
+                  {{conseils.description}}
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 </body>
 
 </html>
