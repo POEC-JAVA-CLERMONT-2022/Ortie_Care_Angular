@@ -11,88 +11,46 @@
     </div>
 
     <div class="grosbloc">
-      <div class="bloc">
-
-        <div class="select">
-          <select class="form-control" formControlName="selectedSol" placeholder="Sol"
+      <div class="bloc" [formGroup]="formGroup">
+        <div class="select" *ngIf="sols">
+          <select class="form-control" 
+            (change)="onRefreshSol()"
+            formControlName="selectedSol" placeholder="selectedSol"
             [class.is-valid]="selectedSol.valid"
             [class.is-invalid]="(selectedSol.touched || selectedSol.dirty) && selectedSol.invalid" type="text">
-            <option *ngFor="let sol of sols" value="sol.idSol">{{sol.nomSol}}</option>
+            <option *ngFor="let sol of sols" [ngValue]="sol.idSol"> {{sol.nomSol}} </option>
           </select>
         </div>
-        <div class="select">
-          <select class="form-control" formControlName="selectedLegume" placeholder="Legume"
+        <div class="select" *ngIf="legumesBySol">
+          <select class="form-control" 
+            formControlName="selectedLegume" placeholder="selectedLegume"
             [class.is-valid]="selectedLegume.valid"
             [class.is-invalid]="(selectedLegume.touched || selectedLegume.dirty) && selectedLegume.invalid" type="text">
-            <option *ngFor="let legume of legumes" value="legume.idLegume">{{legume.nom}}</option>
+            <option *ngFor="let legume of legumesBySol" [ngValue]="legume.id"> {{legume.nom}} </option>
           </select>
         </div>
-        <button class="bouton">Générer</button>
+        <button type="button" (click)="onSubmit()" class="bouton" >Générer</button>
       </div>
       <div class="generateur" *ngIf="legumesAssocies">
         <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Mon légume</h5>
-            <p class="card-text"> Nom : </p>
-            <p class="card-text"> Auto-semis : </p>
-            <p class="card-text"> Temps avant récolte (mois) : </p>
-            <p class="card-text"> Poids moyen (g) : </p>
-            <p class="card-text"> Conseil de culture : </p>
-            <div class="cardConseil">
+          <div class="card-body" *ngFor="let pickedLegume of legumesAssocies">
+            <h5 class="card-title">{{pickedLegume.nom}}</h5>
+            <p class="card-text"> {{pickedLegume.autoReseme}} </p>
+            <p class="card-text"> {{pickedLegume.isGousse}} </p>
+            <p class="card-text"> {{pickedLegume.tempsAvantRecolteEnMois}} </p>
+            <p class="card-text"> {{pickedLegume.poidsMoyenFruitEnG}}</p>
+            <p class="card-text"> Conseils de culture : </p>
+            <div class="cardConseil" *ngFor="let conseils of pickedLegume.conseilsDeCulture">
               <div class="card-body">
+                <h5>{{conseils.titre}}</h5>
                 <p class="card-text">
-                  Sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssome
-                  quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
+                  {{conseils.description}}
+                  </p>
+                </div>
             </div>
           </div>
         </div>
       </div>
-
-      <table *ngIf="legumesAssocies" class="table table-striped table-hover">
-        <thead>
-          <tr>
-            <th>
-              Nom
-            </th>
-            <th>
-              Se reseme auto
-            </th>
-            <th>
-              Est une gousse
-            </th>
-            <th>
-              Temps avant première recole (en mois)
-            </th>
-            <th>
-              Poids moyen
-            </th>
-            <th>
-              NbConseils
-            </th>
-            <th>
-              NbLegumes
-            </th>
-            <th>
-              Sol préféré
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <ng-container *ngFor="let legume of legumes">
-            <tr class="router-link">
-              <td>{{legume.nom}}</td>
-              <td>{{legume.autoReseme}}</td>
-              <td>{{legume.isGousse}}</td>
-              <td>{{legume.tempsAvantRecolteEnMois}}</td>
-              <td>{{legume.poidsMoyenFruitEnG}} grammes</td>
-              <td>{{legume.conseilsDeCulture.length}}</td>
-              <td>{{legume.legumesAssocies.length}}</td>
-              <td>{{legume.bestSol.nomSol}}</td>
-            </tr>
-          </ng-container>
-        </tbody>
-      </table>
     </div>
 </body>
 
