@@ -13,7 +13,7 @@
     <div class="grosbloc">
       <div class="bloc" [formGroup]="formGroup">
         <div class="select" *ngIf="sols">
-          <select class="form-control" 
+          <select class="form-control"
             (change)="onRefreshSol()"
             formControlName="selectedSol" placeholder="selectedSol"
             [class.is-valid]="selectedSol.valid"
@@ -22,7 +22,7 @@
           </select>
         </div>
         <div class="select" *ngIf="legumesBySol">
-          <select class="form-control" 
+          <select class="form-control"
             formControlName="selectedLegume" placeholder="selectedLegume"
             [class.is-valid]="selectedLegume.valid"
             [class.is-invalid]="(selectedLegume.touched || selectedLegume.dirty) && selectedLegume.invalid" type="text">
@@ -34,11 +34,13 @@
       <div class="generateur" *ngIf="legumesAssocies">
         <div class="card">
           <div class="card-body" *ngFor="let pickedLegume of legumesAssocies">
-            <h5 class="card-title">{{pickedLegume.nom}}</h5>
-            <p class="card-text"> {{pickedLegume.autoReseme}} </p>
-            <p class="card-text"> {{pickedLegume.isGousse}} </p>
-            <p class="card-text"> {{pickedLegume.tempsAvantRecolteEnMois}} </p>
-            <p class="card-text"> {{pickedLegume.poidsMoyenFruitEnG}}</p>
+            <h5 class="card-title" class="center">{{pickedLegume.nom}}</h5>
+            <p class="card-text" *ngIf="pickedLegume.autoReseme"> S'auto ressème </p>
+            <p class="card-text" *ngIf="!pickedLegume.autoReseme"> Ne s'auto ressème pas </p>
+            <p class="card-text" *ngIf="pickedLegume.isGousse"> Est une gousse </p>
+            <p class="card-text" *ngIf="!pickedLegume.isGousse"> N'est pas une gousse </p>
+            <p class="card-text"> Temps de récolte après plantation : {{pickedLegume.tempsAvantRecolteEnMois}} mois </p>
+            <p class="card-text"> Poids moyen : {{pickedLegume.poidsMoyenFruitEnG}} grammes</p>
             <p class="card-text"> Conseils de culture : </p>
             <div class="cardConseil" *ngFor="let conseils of pickedLegume.conseilsDeCulture">
               <div class="card-body">
