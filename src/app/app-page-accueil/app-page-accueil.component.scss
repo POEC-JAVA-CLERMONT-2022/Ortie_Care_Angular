@@ -30,11 +30,13 @@ h1 {
 
 .bouton {
 	cursor: pointer;
-	width : 400px;
+	width : 450px;
 	height: 190px;
 	border-radius: 300px;
 	background-color : #a9e3a6;
-	border: none;
+	border-style: inset;
+	border-width: 25px;
+	border-color: #1e611b;
 	float: right;
 	margin-right : 450px;
 	margin-top: 300px;
