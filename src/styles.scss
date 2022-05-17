@@ -1,2 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap";
+
+@font-face {
+  font-family: "Caviar Dreams";
+  src: url("/assets/caviar_dreams/CaviarDreams.ttf") format("ttf"),
+    url("/assets/caviar_dreams/CaviarDreams_Bold.ttf") format("ttf"),
+    url("/assets/caviar_dreams/CaviarDreams_BoldItalic.ttf") format("ttf"),
+    url("/assets/caviar_dreams/CaviarDreams_Italic.ttf") format("ttf");
+}
+
+body {
+  font-family: "Caviar Dreams";
+}
