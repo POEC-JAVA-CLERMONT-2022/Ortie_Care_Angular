@@ -4,7 +4,7 @@ body {
   background-image: url('/assets/cool-background.png');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 881px;
+  height: 937px;
 }
 
 .asset {
@@ -15,11 +15,11 @@ body {
 
 /*                                                FIN  ICONE                          */
 
-/*                                                  GENERATEUR                     */
+/*                                                  GENERATEUR                        */
 .generateur {
   display: flex;
 	background-color:rgba(171, 230, 190, 0.514);
-	margin-top: 50px;
+	margin-top: 70px;
 	width: 1250px;
 	height: 800px;
 	border-radius: 15px;
@@ -119,6 +119,20 @@ select {
 	background-color: rgb(189, 235, 204);
   border-color: rgb(172, 241, 195);
 	color:  rgb(0, 94, 5);
+}
+
+.accueil {
+  width: 100px;
+  margin-top: 15px;
+  margin-left: 15px;
+  border-radius: 20px;
+  border-color:rgb(0, 94, 5) ;
+  background-color: rgb(189, 235, 204);
+  border-color: rgb(172, 241, 195);
+}
+
+.accueil:hover {
+  transform: scale(1.1)
 }
 
 .card {
